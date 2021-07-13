@@ -1,0 +1,10 @@
+07:54:45 **** Incremental Build of configuration Debug for project mpsoc_axi_gpio_system ****
+make all 
+Generating bif file for the system project
+Executing command '::scw::generate_bif -xpfm /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_axi_gpio/sw/mpsoc_axi_gpio_platform/export/mpsoc_axi_gpio_platform/mpsoc_axi_gpio_platform.xpfm -domains standalone_domain -bifpath /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_axi_gpio/sw/mpsoc_axi_gpio_system/Debug/system.bif' on XSCT
+sdcard_gen --xpfm /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_axi_gpio/sw/mpsoc_axi_gpio_platform/export/mpsoc_axi_gpio_platform/mpsoc_axi_gpio_platform.xpfm --sys_config mpsoc_axi_gpio_platform --bif /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_axi_gpio/sw/mpsoc_axi_gpio_system/Debug/system.bif --bitstream /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_axi_gpio/sw/mpsoc_axi_gpio_app/_ide/bitstream/mpsoc_axi_gpio_hw_export.bit --elf /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_axi_gpio/sw/mpsoc_axi_gpio_app/Debug/mpsoc_axi_gpio_app.elf,ps7_cortexa9_0
+creating BOOT.BIN using /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_axi_gpio/sw/mpsoc_axi_gpio_app/_ide/bitstream/mpsoc_axi_gpio_hw_export.bit
+Running /home/varun/tools/XilinX/Vitis/2020.2/bin/bootgen  -image /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_axi_gpio/sw/mpsoc_axi_gpio_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+07:54:53 Build Finished (took 7s.738ms)
+

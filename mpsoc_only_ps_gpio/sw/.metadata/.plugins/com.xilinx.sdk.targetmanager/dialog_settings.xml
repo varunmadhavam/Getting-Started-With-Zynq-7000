@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="mpsoc_oly_ps_gpio_app_system-bitFile" value="${project_loc:mpsoc_oly_ps_gpio_app}/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"/>
+	<item key="mpsoc_oly_ps_gpio_app_system-bmmFile" value=""/>
+	<item key="mpsoc_oly_ps_gpio_app_system-target" value="Local"/>
+	<item key="mpsoc_oly_ps_gpio_app_system-device" value="Auto Detect"/>
+	<item key="mpsoc_oly_ps_gpio_app_system-partial_bit" value="false"/>
+	<item key="mpsoc_oly_ps_gpio_app_system-skip_rev_check" value="false"/>
+	<item key="programfpga.sdxproject" value="mpsoc_oly_ps_gpio_app_system"/>
+	<item key="devices_info_Local" value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;Xilinx PYNQ-Z1 003017AD4141A&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn-Xilinx PYNQ-Z1-003017AD4141A-4ba00477-0&quot;,&quot;3&quot;:&quot;jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0&quot;}}]}"/>
+</section>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="mpsoc_oly_ps_gpio_app" location="/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app" platform="/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/mpsoc_only_ps_gpio_platform.xpfm" platformUID="xilinx:pynq-z1::0.0(custom)" systemProject="mpsoc_oly_ps_gpio_app_system" sysConfig="mpsoc_only_ps_gpio_platform" runtime="C/C++" cpu="standalone_domain" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="d91d329b88c72edd91ddbeab14d783e4">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.744277376">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.2059460953" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

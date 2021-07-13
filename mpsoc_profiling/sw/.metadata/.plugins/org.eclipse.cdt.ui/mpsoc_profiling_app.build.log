@@ -1,0 +1,25 @@
+14:20:27 **** Incremental Build of configuration Debug for project mpsoc_profiling_app ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+ 
+make --no-print-directory main-build
+Building file: ../src/helloworld.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -pg -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_platform/export/mpsoc_profiling_platform/sw/mpsoc_profiling_platform/standalone_domain/bspinclude/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+Finished building: ../src/helloworld.c
+ 
+Building target: mpsoc_profiling_app.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_platform/export/mpsoc_profiling_platform/sw/mpsoc_profiling_platform/standalone_domain/bsplib/lib -o "mpsoc_profiling_app.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: mpsoc_profiling_app.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size mpsoc_profiling_app.elf  |tee "mpsoc_profiling_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  24940	   1944	  22584	  49468	   c13c	mpsoc_profiling_app.elf
+Finished building: mpsoc_profiling_app.elf.size
+ 
+
+14:20:28 Build Finished (took 672ms)
+

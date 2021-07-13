@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="sdx.custom.platform.repository.locations" value="/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_pl_counter/sw/mpsoc_only_pl_counter_platform/export/mpsoc_only_pl_counter_platform;/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_pl_counter/sw/only_counter_hw/export/only_counter_hw"/>
+</section>

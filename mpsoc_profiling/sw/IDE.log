@@ -1,0 +1,126 @@
+14:10:55 INFO  : Launching XSCT server: xsct -n  -interactive /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/temp_xsdb_launch_script.tcl
+14:10:55 INFO  : Registering command handlers for Vitis TCF services
+14:11:00 INFO  : Platform repository initialization has completed.
+14:11:01 INFO  : XSCT server has started successfully.
+14:11:02 INFO  : plnx-install-location is set to ''
+14:11:02 INFO  : Successfully done setting XSCT server connection channel  
+14:11:02 INFO  : Successfully done query RDI_DATADIR 
+14:11:02 INFO  : Successfully done setting workspace for the tool. 
+14:12:35 INFO  : Result from executing command 'getProjects': mpsoc_profiling_platform
+14:12:35 INFO  : Result from executing command 'getPlatforms': 
+14:13:33 INFO  : Result from executing command 'getProjects': mpsoc_profiling_platform
+14:13:33 INFO  : Result from executing command 'getPlatforms': mpsoc_profiling_platform|/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_platform/export/mpsoc_profiling_platform/mpsoc_profiling_platform.xpfm
+14:16:33 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_profiling_app'...
+14:17:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:17:53 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+14:17:53 INFO  : 'jtag frequency' command is executed.
+14:17:53 INFO  : Context for 'APU' is selected.
+14:17:53 INFO  : System reset is completed.
+14:17:56 INFO  : 'after 3000' command is executed.
+14:17:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+14:17:58 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_app/_ide/bitstream/mpsoc_profiling_hw_export.bit"
+14:17:59 INFO  : Context for 'APU' is selected.
+14:17:59 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_platform/export/mpsoc_profiling_platform/hw/mpsoc_profiling_hw_export.xsa'.
+14:17:59 INFO  : 'configparams force-mem-access 1' command is executed.
+14:17:59 INFO  : Context for 'APU' is selected.
+14:17:59 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_app/_ide/psinit/ps7_init.tcl' is done.
+14:17:59 INFO  : 'ps7_init' command is executed.
+14:17:59 INFO  : 'ps7_post_config' command is executed.
+14:17:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:17:59 INFO  : 'profile -freq 10000 -scratchaddr 0x00300000' command is executed.
+14:18:00 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_app/Debug/mpsoc_profiling_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:18:00 INFO  : 'configparams force-mem-access 0' command is executed.
+14:18:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_app/_ide/bitstream/mpsoc_profiling_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_platform/export/mpsoc_profiling_platform/hw/mpsoc_profiling_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+profile -freq 10000 -scratchaddr 0x00300000
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_app/Debug/mpsoc_profiling_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:18:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:18:00 INFO  : 'set bpid [bpadd -addr &_exit]' command is executed.
+14:18:00 INFO  : 'con -block' command is executed.
+14:18:00 INFO  : 'profile -out /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_app/Debug/gmon.out' command is executed.
+14:18:00 INFO  : 'bpremove $bpid' command is executed.
+14:18:00 INFO  : 'con' command is executed.
+14:18:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+set bpid [bpadd -addr &_exit]
+con -block
+profile -out /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_app/Debug/gmon.out
+bpremove $bpid
+con
+----------------End of Script----------------
+
+14:18:00 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_system/_ide/scripts/debugger_mpsoc_profiling_app-default.tcl'
+14:20:27 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_profiling_app'...
+14:20:56 INFO  : Disconnected from the channel tcfchan#3.
+14:20:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:20:58 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+14:20:58 INFO  : 'jtag frequency' command is executed.
+14:20:58 INFO  : Context for 'APU' is selected.
+14:20:58 INFO  : System reset is completed.
+14:21:01 INFO  : 'after 3000' command is executed.
+14:21:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+14:21:03 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_app/_ide/bitstream/mpsoc_profiling_hw_export.bit"
+14:21:03 INFO  : Context for 'APU' is selected.
+14:21:03 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_platform/export/mpsoc_profiling_platform/hw/mpsoc_profiling_hw_export.xsa'.
+14:21:03 INFO  : 'configparams force-mem-access 1' command is executed.
+14:21:03 INFO  : Context for 'APU' is selected.
+14:21:03 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_app/_ide/psinit/ps7_init.tcl' is done.
+14:21:04 INFO  : 'ps7_init' command is executed.
+14:21:04 INFO  : 'ps7_post_config' command is executed.
+14:21:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:21:04 INFO  : 'profile -freq 10000 -scratchaddr 0x00300000' command is executed.
+14:21:05 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_app/Debug/mpsoc_profiling_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:21:05 INFO  : 'configparams force-mem-access 0' command is executed.
+14:21:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_app/_ide/bitstream/mpsoc_profiling_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_platform/export/mpsoc_profiling_platform/hw/mpsoc_profiling_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+profile -freq 10000 -scratchaddr 0x00300000
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_app/Debug/mpsoc_profiling_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:21:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:21:05 INFO  : 'set bpid [bpadd -addr &_exit]' command is executed.
+14:21:05 INFO  : 'con -block' command is executed.
+14:21:05 INFO  : 'profile -out /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_app/Debug/gmon.out' command is executed.
+14:21:05 INFO  : 'bpremove $bpid' command is executed.
+14:21:05 INFO  : 'con' command is executed.
+14:21:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+set bpid [bpadd -addr &_exit]
+con -block
+profile -out /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_app/Debug/gmon.out
+bpremove $bpid
+con
+----------------End of Script----------------
+
+14:21:05 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_system/_ide/scripts/debugger_mpsoc_profiling_app-default.tcl'
+14:26:54 INFO  : Disconnected from the channel tcfchan#5.

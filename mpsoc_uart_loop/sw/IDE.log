@@ -1,0 +1,246 @@
+18:40:43 INFO  : Launching XSCT server: xsct -n  -interactive /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/temp_xsdb_launch_script.tcl
+18:40:43 INFO  : Registering command handlers for Vitis TCF services
+18:40:49 INFO  : XSCT server has started successfully.
+18:40:49 INFO  : Successfully done setting XSCT server connection channel  
+18:40:49 INFO  : Platform repository initialization has completed.
+18:40:49 INFO  : plnx-install-location is set to ''
+18:40:49 INFO  : Successfully done setting workspace for the tool. 
+18:40:49 INFO  : Successfully done query RDI_DATADIR 
+18:41:28 INFO  : Result from executing command 'getProjects': mpsoc_uart_loop_platform
+18:41:28 INFO  : Result from executing command 'getPlatforms': 
+18:41:56 INFO  : Result from executing command 'getProjects': mpsoc_uart_loop_platform
+18:41:56 INFO  : Result from executing command 'getPlatforms': mpsoc_uart_loop_platform|/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_platform/export/mpsoc_uart_loop_platform/mpsoc_uart_loop_platform.xpfm
+18:42:52 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_uart_loop_app'...
+19:14:20 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_uart_loop_app'...
+19:14:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:14:41 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+19:14:41 INFO  : 'jtag frequency' command is executed.
+19:14:41 INFO  : Context for 'APU' is selected.
+19:14:41 INFO  : System reset is completed.
+19:14:44 INFO  : 'after 3000' command is executed.
+19:14:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+19:14:47 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/_ide/bitstream/mpsoc_uart_loop_hw_export.bit"
+19:14:47 INFO  : Context for 'APU' is selected.
+19:14:47 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_platform/export/mpsoc_uart_loop_platform/hw/mpsoc_uart_loop_hw_export.xsa'.
+19:14:47 INFO  : 'configparams force-mem-access 1' command is executed.
+19:14:47 INFO  : Context for 'APU' is selected.
+19:14:47 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/_ide/psinit/ps7_init.tcl' is done.
+19:14:47 INFO  : 'ps7_init' command is executed.
+19:14:47 INFO  : 'ps7_post_config' command is executed.
+19:14:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:14:47 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/Debug/mpsoc_uart_loop_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:14:47 INFO  : 'configparams force-mem-access 0' command is executed.
+19:14:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/_ide/bitstream/mpsoc_uart_loop_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_platform/export/mpsoc_uart_loop_platform/hw/mpsoc_uart_loop_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/Debug/mpsoc_uart_loop_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:14:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:14:47 INFO  : 'con' command is executed.
+19:14:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:14:47 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_system/_ide/scripts/systemdebugger_mpsoc_uart_loop_system_standalone.tcl'
+19:16:31 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_uart_loop_app'...
+19:16:58 INFO  : Disconnected from the channel tcfchan#4.
+19:16:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:16:59 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+19:16:59 INFO  : 'jtag frequency' command is executed.
+19:16:59 INFO  : Context for 'APU' is selected.
+19:16:59 INFO  : System reset is completed.
+19:17:02 INFO  : 'after 3000' command is executed.
+19:17:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+19:17:04 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/_ide/bitstream/mpsoc_uart_loop_hw_export.bit"
+19:17:04 INFO  : Context for 'APU' is selected.
+19:17:04 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_platform/export/mpsoc_uart_loop_platform/hw/mpsoc_uart_loop_hw_export.xsa'.
+19:17:04 INFO  : 'configparams force-mem-access 1' command is executed.
+19:17:04 INFO  : Context for 'APU' is selected.
+19:17:04 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/_ide/psinit/ps7_init.tcl' is done.
+19:17:05 INFO  : 'ps7_init' command is executed.
+19:17:05 INFO  : 'ps7_post_config' command is executed.
+19:17:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:17:05 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/Debug/mpsoc_uart_loop_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:17:05 INFO  : 'configparams force-mem-access 0' command is executed.
+19:17:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/_ide/bitstream/mpsoc_uart_loop_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_platform/export/mpsoc_uart_loop_platform/hw/mpsoc_uart_loop_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/Debug/mpsoc_uart_loop_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:17:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:17:05 INFO  : 'con' command is executed.
+19:17:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:17:05 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_system/_ide/scripts/systemdebugger_mpsoc_uart_loop_system_standalone.tcl'
+19:22:43 INFO  : Disconnected from the channel tcfchan#6.
+19:22:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:22:43 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+19:22:43 INFO  : 'jtag frequency' command is executed.
+19:22:43 INFO  : Context for 'APU' is selected.
+19:22:43 INFO  : System reset is completed.
+19:22:46 INFO  : 'after 3000' command is executed.
+19:22:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+19:22:49 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/_ide/bitstream/mpsoc_uart_loop_hw_export.bit"
+19:22:49 INFO  : Context for 'APU' is selected.
+19:22:49 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_platform/export/mpsoc_uart_loop_platform/hw/mpsoc_uart_loop_hw_export.xsa'.
+19:22:49 INFO  : 'configparams force-mem-access 1' command is executed.
+19:22:49 INFO  : Context for 'APU' is selected.
+19:22:49 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/_ide/psinit/ps7_init.tcl' is done.
+19:22:49 INFO  : 'ps7_init' command is executed.
+19:22:49 INFO  : 'ps7_post_config' command is executed.
+19:22:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:22:49 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/Debug/mpsoc_uart_loop_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:22:49 INFO  : 'configparams force-mem-access 0' command is executed.
+19:22:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/_ide/bitstream/mpsoc_uart_loop_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_platform/export/mpsoc_uart_loop_platform/hw/mpsoc_uart_loop_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/Debug/mpsoc_uart_loop_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:22:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:22:49 INFO  : 'con' command is executed.
+19:22:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:22:49 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_system/_ide/scripts/systemdebugger_mpsoc_uart_loop_system_standalone.tcl'
+19:23:33 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_uart_loop_app'...
+19:24:01 INFO  : Disconnected from the channel tcfchan#7.
+19:24:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:24:01 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+19:24:01 INFO  : 'jtag frequency' command is executed.
+19:24:01 INFO  : Context for 'APU' is selected.
+19:24:01 INFO  : System reset is completed.
+19:24:04 INFO  : 'after 3000' command is executed.
+19:24:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+19:24:07 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/_ide/bitstream/mpsoc_uart_loop_hw_export.bit"
+19:24:07 INFO  : Context for 'APU' is selected.
+19:24:07 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_platform/export/mpsoc_uart_loop_platform/hw/mpsoc_uart_loop_hw_export.xsa'.
+19:24:07 INFO  : 'configparams force-mem-access 1' command is executed.
+19:24:07 INFO  : Context for 'APU' is selected.
+19:24:07 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/_ide/psinit/ps7_init.tcl' is done.
+19:24:07 INFO  : 'ps7_init' command is executed.
+19:24:07 INFO  : 'ps7_post_config' command is executed.
+19:24:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:24:07 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/Debug/mpsoc_uart_loop_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:24:07 INFO  : 'configparams force-mem-access 0' command is executed.
+19:24:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/_ide/bitstream/mpsoc_uart_loop_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_platform/export/mpsoc_uart_loop_platform/hw/mpsoc_uart_loop_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/Debug/mpsoc_uart_loop_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:24:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:24:07 INFO  : 'con' command is executed.
+19:24:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:24:07 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_system/_ide/scripts/systemdebugger_mpsoc_uart_loop_system_standalone.tcl'
+19:24:38 INFO  : Disconnected from the channel tcfchan#9.
+19:24:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:24:38 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+19:24:38 INFO  : 'jtag frequency' command is executed.
+19:24:38 INFO  : Context for 'APU' is selected.
+19:24:38 INFO  : System reset is completed.
+19:24:41 INFO  : 'after 3000' command is executed.
+19:24:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+19:24:44 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/_ide/bitstream/mpsoc_uart_loop_hw_export.bit"
+19:24:44 INFO  : Context for 'APU' is selected.
+19:24:44 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_platform/export/mpsoc_uart_loop_platform/hw/mpsoc_uart_loop_hw_export.xsa'.
+19:24:44 INFO  : 'configparams force-mem-access 1' command is executed.
+19:24:44 INFO  : Context for 'APU' is selected.
+19:24:44 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/_ide/psinit/ps7_init.tcl' is done.
+19:24:44 INFO  : 'ps7_init' command is executed.
+19:24:44 INFO  : 'ps7_post_config' command is executed.
+19:24:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:24:44 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/Debug/mpsoc_uart_loop_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:24:44 INFO  : 'configparams force-mem-access 0' command is executed.
+19:24:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/_ide/bitstream/mpsoc_uart_loop_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_platform/export/mpsoc_uart_loop_platform/hw/mpsoc_uart_loop_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_app/Debug/mpsoc_uart_loop_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:24:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:24:44 INFO  : 'con' command is executed.
+19:24:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:24:44 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/sw/mpsoc_uart_loop_system/_ide/scripts/systemdebugger_mpsoc_uart_loop_system_standalone.tcl'
+19:25:24 INFO  : Disconnected from the channel tcfchan#10.

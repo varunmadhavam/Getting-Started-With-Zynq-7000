@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="sdx.custom.platform.repository.locations" value="/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform"/>
+	<item key="sdx.custom.platform.repository.last.directory.dialog.location" value="/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform"/>
+</section>

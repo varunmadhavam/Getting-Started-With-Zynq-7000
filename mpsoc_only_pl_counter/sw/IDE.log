@@ -1,0 +1,39 @@
+10:58:45 INFO  : Launching XSCT server: xsct -n  -interactive /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_pl_counter/sw/temp_xsdb_launch_script.tcl
+10:58:45 INFO  : Registering command handlers for Vitis TCF services
+10:58:52 INFO  : XSCT server has started successfully.
+10:58:52 INFO  : plnx-install-location is set to ''
+10:58:52 INFO  : Successfully done setting XSCT server connection channel  
+10:58:52 ERROR : Error encountered while initializing user repository paths
+Reason: No Platforms Found.
+
+
+10:58:52 INFO  : Platform repository initialization has completed.
+10:58:52 INFO  : Successfully done setting workspace for the tool. 
+10:58:52 INFO  : Successfully done query RDI_DATADIR 
+10:59:20 INFO  : Launching XSCT server: xsct -n  -interactive /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_pl_counter/sw/temp_xsdb_launch_script.tcl
+10:59:20 INFO  : Registering command handlers for Vitis TCF services
+10:59:26 ERROR : Error encountered while initializing user repository paths
+Reason: No Platforms Found.
+
+
+10:59:26 INFO  : Platform repository initialization has completed.
+10:59:26 INFO  : XSCT server has started successfully.
+10:59:26 INFO  : Successfully done setting XSCT server connection channel  
+10:59:26 INFO  : plnx-install-location is set to ''
+10:59:26 INFO  : Successfully done query RDI_DATADIR 
+10:59:26 INFO  : Successfully done setting workspace for the tool. 
+11:01:13 INFO  : Result from executing command 'getProjects': only_counter_hw
+11:01:13 INFO  : Result from executing command 'getPlatforms': 
+11:02:01 INFO  : Result from executing command 'getProjects': only_counter_hw
+11:02:01 INFO  : Result from executing command 'getPlatforms': only_counter_hw|/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_pl_counter/sw/only_counter_hw/export/only_counter_hw/only_counter_hw.xpfm
+11:59:22 INFO  : Launching XSCT server: xsct -n  -interactive /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_pl_counter/sw/temp_xsdb_launch_script.tcl
+11:59:24 INFO  : Registering command handlers for Vitis TCF services
+11:59:29 INFO  : XSCT server has started successfully.
+11:59:29 INFO  : Successfully done setting XSCT server connection channel  
+11:59:29 INFO  : plnx-install-location is set to ''
+11:59:30 INFO  : Successfully done setting workspace for the tool. 
+11:59:30 INFO  : Successfully done query RDI_DATADIR 
+11:59:31 INFO  : Platform repository initialization has completed.
+12:00:31 INFO  : Invoking Bootgen: bootgen -image output.bif -arch zynq -o /tmp/BOOT.bin
+12:00:31 INFO  : Creating new bif file /tmp/output.bif
+12:00:33 INFO  : Bootgen command execution is done.

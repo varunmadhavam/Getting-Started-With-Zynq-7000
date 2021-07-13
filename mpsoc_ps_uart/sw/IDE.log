@@ -1,0 +1,59 @@
+18:22:40 INFO  : Launching XSCT server: xsct -n  -interactive /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_ps_uart/sw/temp_xsdb_launch_script.tcl
+18:22:40 INFO  : Registering command handlers for Vitis TCF services
+18:22:46 INFO  : Platform repository initialization has completed.
+18:22:46 INFO  : XSCT server has started successfully.
+18:22:47 INFO  : Successfully done setting XSCT server connection channel  
+18:22:47 INFO  : plnx-install-location is set to ''
+18:22:47 INFO  : Successfully done query RDI_DATADIR 
+18:22:47 INFO  : Successfully done setting workspace for the tool. 
+18:23:20 INFO  : Result from executing command 'getProjects': mpsoc_ps_uart_platform
+18:23:20 INFO  : Result from executing command 'getPlatforms': 
+18:24:17 INFO  : Result from executing command 'getProjects': mpsoc_ps_uart_platform
+18:24:17 INFO  : Result from executing command 'getPlatforms': mpsoc_ps_uart_platform|/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_ps_uart/sw/mpsoc_ps_uart_platform/export/mpsoc_ps_uart_platform/mpsoc_ps_uart_platform.xpfm
+18:25:14 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_ps_uart_app'...
+18:26:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:26:45 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+18:26:45 INFO  : 'jtag frequency' command is executed.
+18:26:45 INFO  : Context for 'APU' is selected.
+18:26:45 INFO  : System reset is completed.
+18:26:48 INFO  : 'after 3000' command is executed.
+18:26:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+18:26:50 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_ps_uart/sw/mpsoc_ps_uart_app/_ide/bitstream/mpsoc_ps_uart_hw_export.bit"
+18:26:51 INFO  : Context for 'APU' is selected.
+18:26:51 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_ps_uart/sw/mpsoc_ps_uart_platform/export/mpsoc_ps_uart_platform/hw/mpsoc_ps_uart_hw_export.xsa'.
+18:26:51 INFO  : 'configparams force-mem-access 1' command is executed.
+18:26:51 INFO  : Context for 'APU' is selected.
+18:26:51 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_ps_uart/sw/mpsoc_ps_uart_app/_ide/psinit/ps7_init.tcl' is done.
+18:26:51 INFO  : 'ps7_init' command is executed.
+18:26:51 INFO  : 'ps7_post_config' command is executed.
+18:26:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:26:51 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_ps_uart/sw/mpsoc_ps_uart_app/Debug/mpsoc_ps_uart_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:26:51 INFO  : 'configparams force-mem-access 0' command is executed.
+18:26:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_ps_uart/sw/mpsoc_ps_uart_app/_ide/bitstream/mpsoc_ps_uart_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_ps_uart/sw/mpsoc_ps_uart_platform/export/mpsoc_ps_uart_platform/hw/mpsoc_ps_uart_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_ps_uart/sw/mpsoc_ps_uart_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_ps_uart/sw/mpsoc_ps_uart_app/Debug/mpsoc_ps_uart_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:26:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:26:51 INFO  : 'con' command is executed.
+18:26:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:26:51 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_ps_uart/sw/mpsoc_ps_uart_system/_ide/scripts/systemdebugger_mpsoc_ps_uart_system_standalone.tcl'
+18:27:39 INFO  : Disconnected from the channel tcfchan#3.

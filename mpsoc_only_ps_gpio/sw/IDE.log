@@ -1,0 +1,995 @@
+11:13:23 INFO  : Launching XSCT server: xsct -n  -interactive /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/temp_xsdb_launch_script.tcl
+11:13:23 INFO  : Registering command handlers for Vitis TCF services
+11:13:30 INFO  : XSCT server has started successfully.
+11:13:31 INFO  : Successfully done setting XSCT server connection channel  
+11:13:31 INFO  : plnx-install-location is set to ''
+11:13:31 INFO  : Successfully done query RDI_DATADIR 
+11:13:31 INFO  : Successfully done setting workspace for the tool. 
+11:13:31 INFO  : Platform repository initialization has completed.
+11:14:54 INFO  : Result from executing command 'getProjects': mpsoc_only_ps_gpio_platform
+11:14:54 INFO  : Result from executing command 'getPlatforms': 
+11:15:43 INFO  : No changes in MSS file content so sources will not be generated.
+11:16:02 INFO  : Result from executing command 'getProjects': mpsoc_only_ps_gpio_platform
+11:16:02 INFO  : Result from executing command 'getPlatforms': mpsoc_only_ps_gpio_platform|/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/mpsoc_only_ps_gpio_platform.xpfm
+14:00:24 INFO  : No changes in MSS file content so sources will not be generated.
+14:06:17 INFO  : No changes in MSS file content so sources will not be generated.
+14:06:49 INFO  : No changes in MSS file content so sources will not be generated.
+18:52:25 INFO  : Result from executing command 'getProjects': mpsoc_only_ps_gpio_platform
+18:52:25 INFO  : Result from executing command 'getPlatforms': mpsoc_only_ps_gpio_platform|/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/mpsoc_only_ps_gpio_platform.xpfm
+18:52:30 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+18:52:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:52:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+18:52:55 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+18:53:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:53:35 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+18:53:35 INFO  : 'jtag frequency' command is executed.
+18:53:35 INFO  : Context for 'APU' is selected.
+18:53:35 INFO  : System reset is completed.
+18:53:38 INFO  : 'after 3000' command is executed.
+18:53:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+18:53:41 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+18:53:41 INFO  : Context for 'APU' is selected.
+18:53:41 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa'.
+18:53:41 INFO  : 'configparams force-mem-access 1' command is executed.
+18:53:41 INFO  : Context for 'APU' is selected.
+18:53:41 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' is done.
+18:53:41 INFO  : 'ps7_init' command is executed.
+18:53:41 INFO  : 'ps7_post_config' command is executed.
+18:53:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:53:41 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:53:41 INFO  : 'configparams force-mem-access 0' command is executed.
+18:53:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:53:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:53:41 INFO  : 'con' command is executed.
+18:53:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:53:41 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app_system/_ide/scripts/systemdebugger_mpsoc_oly_ps_gpio_app_system_standalone.tcl'
+18:53:55 INFO  : Disconnected from the channel tcfchan#4.
+18:53:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:53:55 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+18:53:55 INFO  : 'jtag frequency' command is executed.
+18:53:55 INFO  : Context for 'APU' is selected.
+18:53:55 INFO  : System reset is completed.
+18:53:58 INFO  : 'after 3000' command is executed.
+18:53:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+18:54:01 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+18:54:01 INFO  : Context for 'APU' is selected.
+18:54:01 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa'.
+18:54:01 INFO  : 'configparams force-mem-access 1' command is executed.
+18:54:01 INFO  : Context for 'APU' is selected.
+18:54:01 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' is done.
+18:54:01 INFO  : 'ps7_init' command is executed.
+18:54:01 INFO  : 'ps7_post_config' command is executed.
+18:54:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:54:01 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:54:01 INFO  : 'configparams force-mem-access 0' command is executed.
+18:54:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:54:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:54:01 INFO  : 'con' command is executed.
+18:54:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:54:01 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app_system/_ide/scripts/systemdebugger_mpsoc_oly_ps_gpio_app_system_standalone.tcl'
+21:46:51 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+21:47:46 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+21:48:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:48:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+21:48:07 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+21:49:53 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+21:50:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:50:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+21:50:14 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+21:50:33 INFO  : Disconnected from the channel tcfchan#5.
+21:50:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:50:34 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+21:50:34 INFO  : 'jtag frequency' command is executed.
+21:50:34 INFO  : Context for 'APU' is selected.
+21:50:34 INFO  : System reset is completed.
+21:50:37 INFO  : 'after 3000' command is executed.
+21:50:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+21:50:39 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+21:50:39 INFO  : Context for 'APU' is selected.
+21:50:39 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa'.
+21:50:39 INFO  : 'configparams force-mem-access 1' command is executed.
+21:50:39 INFO  : Context for 'APU' is selected.
+21:50:39 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' is done.
+21:50:40 INFO  : 'ps7_init' command is executed.
+21:50:40 INFO  : 'ps7_post_config' command is executed.
+21:50:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:50:40 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:50:40 INFO  : 'configparams force-mem-access 0' command is executed.
+21:50:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:50:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:50:40 INFO  : 'con' command is executed.
+21:50:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:50:40 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app_system/_ide/scripts/systemdebugger_mpsoc_oly_ps_gpio_app_system_standalone.tcl'
+21:50:56 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+21:51:30 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+21:51:52 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+21:52:07 INFO  : Disconnected from the channel tcfchan#9.
+21:52:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:52:07 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+21:52:07 INFO  : 'jtag frequency' command is executed.
+21:52:07 INFO  : Context for 'APU' is selected.
+21:52:07 INFO  : System reset is completed.
+21:52:10 INFO  : 'after 3000' command is executed.
+21:52:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+21:52:12 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+21:52:13 INFO  : Context for 'APU' is selected.
+21:52:13 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa'.
+21:52:13 INFO  : 'configparams force-mem-access 1' command is executed.
+21:52:13 INFO  : Context for 'APU' is selected.
+21:52:13 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' is done.
+21:52:13 INFO  : 'ps7_init' command is executed.
+21:52:13 INFO  : 'ps7_post_config' command is executed.
+21:52:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:52:13 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:52:13 INFO  : 'configparams force-mem-access 0' command is executed.
+21:52:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:52:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:52:13 INFO  : 'con' command is executed.
+21:52:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:52:13 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app_system/_ide/scripts/systemdebugger_mpsoc_oly_ps_gpio_app_system_standalone.tcl'
+21:53:06 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+21:53:24 INFO  : Disconnected from the channel tcfchan#12.
+21:53:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:53:25 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+21:53:25 INFO  : 'jtag frequency' command is executed.
+21:53:25 INFO  : Context for 'APU' is selected.
+21:53:25 INFO  : System reset is completed.
+21:53:28 INFO  : 'after 3000' command is executed.
+21:53:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+21:53:30 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+21:53:30 INFO  : Context for 'APU' is selected.
+21:53:30 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa'.
+21:53:30 INFO  : 'configparams force-mem-access 1' command is executed.
+21:53:30 INFO  : Context for 'APU' is selected.
+21:53:30 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' is done.
+21:53:30 INFO  : 'ps7_init' command is executed.
+21:53:30 INFO  : 'ps7_post_config' command is executed.
+21:53:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:53:30 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:53:30 INFO  : 'configparams force-mem-access 0' command is executed.
+21:53:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:53:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:53:31 INFO  : 'con' command is executed.
+21:53:31 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:53:31 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app_system/_ide/scripts/systemdebugger_mpsoc_oly_ps_gpio_app_system_standalone.tcl'
+21:56:11 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+21:56:41 INFO  : Disconnected from the channel tcfchan#14.
+21:56:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:56:41 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+21:56:41 INFO  : 'jtag frequency' command is executed.
+21:56:41 INFO  : Context for 'APU' is selected.
+21:56:41 INFO  : System reset is completed.
+21:56:44 INFO  : 'after 3000' command is executed.
+21:56:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+21:56:47 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+21:56:47 INFO  : Context for 'APU' is selected.
+21:56:47 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa'.
+21:56:47 INFO  : 'configparams force-mem-access 1' command is executed.
+21:56:47 INFO  : Context for 'APU' is selected.
+21:56:47 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' is done.
+21:56:47 INFO  : 'ps7_init' command is executed.
+21:56:47 INFO  : 'ps7_post_config' command is executed.
+21:56:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:56:47 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:56:47 INFO  : 'configparams force-mem-access 0' command is executed.
+21:56:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:56:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:56:47 INFO  : 'con' command is executed.
+21:56:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:56:47 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app_system/_ide/scripts/systemdebugger_mpsoc_oly_ps_gpio_app_system_standalone.tcl'
+21:57:25 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+21:57:49 INFO  : Disconnected from the channel tcfchan#16.
+21:57:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:57:50 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+21:57:50 INFO  : 'jtag frequency' command is executed.
+21:57:50 INFO  : Context for 'APU' is selected.
+21:57:50 INFO  : System reset is completed.
+21:57:53 INFO  : 'after 3000' command is executed.
+21:57:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+21:57:55 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+21:57:55 INFO  : Context for 'APU' is selected.
+21:57:55 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa'.
+21:57:55 INFO  : 'configparams force-mem-access 1' command is executed.
+21:57:55 INFO  : Context for 'APU' is selected.
+21:57:55 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' is done.
+21:57:55 INFO  : 'ps7_init' command is executed.
+21:57:55 INFO  : 'ps7_post_config' command is executed.
+21:57:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:57:56 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:57:56 INFO  : 'configparams force-mem-access 0' command is executed.
+21:57:56 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:57:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:57:56 INFO  : 'con' command is executed.
+21:57:56 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:57:56 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app_system/_ide/scripts/systemdebugger_mpsoc_oly_ps_gpio_app_system_standalone.tcl'
+21:58:13 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+21:58:32 INFO  : Disconnected from the channel tcfchan#18.
+21:58:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:58:32 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+21:58:32 INFO  : 'jtag frequency' command is executed.
+21:58:32 INFO  : Context for 'APU' is selected.
+21:58:32 INFO  : System reset is completed.
+21:58:36 INFO  : 'after 3000' command is executed.
+21:58:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+21:58:38 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+21:58:38 INFO  : Context for 'APU' is selected.
+21:58:38 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa'.
+21:58:38 INFO  : 'configparams force-mem-access 1' command is executed.
+21:58:38 INFO  : Context for 'APU' is selected.
+21:58:38 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' is done.
+21:58:38 INFO  : 'ps7_init' command is executed.
+21:58:38 INFO  : 'ps7_post_config' command is executed.
+21:58:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:58:38 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:58:38 INFO  : 'configparams force-mem-access 0' command is executed.
+21:58:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:58:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:58:38 INFO  : 'con' command is executed.
+21:58:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:58:38 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app_system/_ide/scripts/systemdebugger_mpsoc_oly_ps_gpio_app_system_standalone.tcl'
+21:58:59 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+21:59:36 INFO  : Disconnected from the channel tcfchan#20.
+21:59:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:59:37 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+21:59:37 INFO  : 'jtag frequency' command is executed.
+21:59:37 INFO  : Context for 'APU' is selected.
+21:59:37 INFO  : System reset is completed.
+21:59:40 INFO  : 'after 3000' command is executed.
+21:59:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+21:59:42 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+21:59:42 INFO  : Context for 'APU' is selected.
+21:59:42 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa'.
+21:59:42 INFO  : 'configparams force-mem-access 1' command is executed.
+21:59:42 INFO  : Context for 'APU' is selected.
+21:59:42 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' is done.
+21:59:42 INFO  : 'ps7_init' command is executed.
+21:59:42 INFO  : 'ps7_post_config' command is executed.
+21:59:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:59:42 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:59:43 INFO  : 'configparams force-mem-access 0' command is executed.
+21:59:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:59:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:59:43 INFO  : 'con' command is executed.
+21:59:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:59:43 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app_system/_ide/scripts/systemdebugger_mpsoc_oly_ps_gpio_app_system_standalone.tcl'
+22:00:09 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+22:00:29 INFO  : Disconnected from the channel tcfchan#22.
+22:00:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:00:29 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+22:00:29 INFO  : 'jtag frequency' command is executed.
+22:00:29 INFO  : Context for 'APU' is selected.
+22:00:29 INFO  : System reset is completed.
+22:00:32 INFO  : 'after 3000' command is executed.
+22:00:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+22:00:35 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+22:00:35 INFO  : Context for 'APU' is selected.
+22:00:35 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa'.
+22:00:35 INFO  : 'configparams force-mem-access 1' command is executed.
+22:00:35 INFO  : Context for 'APU' is selected.
+22:00:35 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' is done.
+22:00:35 INFO  : 'ps7_init' command is executed.
+22:00:35 INFO  : 'ps7_post_config' command is executed.
+22:00:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:00:35 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:00:35 INFO  : 'configparams force-mem-access 0' command is executed.
+22:00:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:00:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:00:35 INFO  : 'con' command is executed.
+22:00:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:00:35 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app_system/_ide/scripts/systemdebugger_mpsoc_oly_ps_gpio_app_system_standalone.tcl'
+22:01:40 INFO  : Disconnected from the channel tcfchan#24.
+10:31:47 INFO  : Launching XSCT server: xsct -n  -interactive /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/temp_xsdb_launch_script.tcl
+10:31:58 INFO  : XSCT server has started successfully.
+10:31:58 INFO  : plnx-install-location is set to ''
+10:31:58 INFO  : Successfully done setting XSCT server connection channel  
+10:31:58 INFO  : Successfully done setting workspace for the tool. 
+10:32:06 INFO  : Platform repository initialization has completed.
+10:32:06 INFO  : Registering command handlers for Vitis TCF services
+10:32:08 INFO  : Successfully done query RDI_DATADIR 
+10:43:10 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+10:43:24 ERROR : (XSDB Server)ERROR: [Hsi 55-1571] The design file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa is already opened
+
+10:43:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:43:50 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+10:43:50 INFO  : 'jtag frequency' command is executed.
+10:43:50 INFO  : Context for 'APU' is selected.
+10:43:50 INFO  : System reset is completed.
+10:43:53 INFO  : 'after 3000' command is executed.
+10:43:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+10:43:55 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+10:43:55 INFO  : Context for 'APU' is selected.
+10:43:55 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa'.
+10:43:55 INFO  : 'configparams force-mem-access 1' command is executed.
+10:43:55 INFO  : Context for 'APU' is selected.
+10:43:55 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' is done.
+10:43:56 INFO  : 'ps7_init' command is executed.
+10:43:56 INFO  : 'ps7_post_config' command is executed.
+10:43:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:43:56 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:43:56 INFO  : 'configparams force-mem-access 0' command is executed.
+10:43:56 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:43:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:43:56 INFO  : 'con' command is executed.
+10:43:56 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+10:43:56 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app_system/_ide/scripts/systemdebugger_mpsoc_oly_ps_gpio_app_system_standalone.tcl'
+11:23:32 INFO  : Hardware specification for platform project 'mpsoc_only_ps_gpio_platform' is updated.
+11:23:45 INFO  : Result from executing command 'getProjects': mpsoc_only_ps_gpio_platform
+11:23:45 INFO  : Result from executing command 'getPlatforms': mpsoc_only_ps_gpio_platform|/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/mpsoc_only_ps_gpio_platform.xpfm
+11:23:58 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+11:24:02 INFO  : The hardware specfication used by project 'mpsoc_oly_ps_gpio_app' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+11:24:02 INFO  : The file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit' stored in project is removed.
+11:24:02 INFO  : The updated bitstream files are copied from platform to folder '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream' in project 'mpsoc_oly_ps_gpio_app'.
+11:24:02 INFO  : The file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' stored in project is removed.
+11:24:09 INFO  : The updated ps init files are copied from platform to folder '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit' in project 'mpsoc_oly_ps_gpio_app'.
+11:24:17 INFO  : Disconnected from the channel tcfchan#2.
+11:24:18 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:24:18 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+11:24:18 INFO  : 'jtag frequency' command is executed.
+11:24:18 INFO  : Context for 'APU' is selected.
+11:24:18 INFO  : System reset is completed.
+11:24:21 INFO  : 'after 3000' command is executed.
+11:24:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+11:24:23 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+11:24:23 INFO  : Context for 'APU' is selected.
+11:24:23 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa'.
+11:24:23 INFO  : 'configparams force-mem-access 1' command is executed.
+11:24:23 INFO  : Context for 'APU' is selected.
+11:24:23 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' is done.
+11:24:24 INFO  : 'ps7_init' command is executed.
+11:24:24 INFO  : 'ps7_post_config' command is executed.
+11:24:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:24:24 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:24:24 INFO  : 'configparams force-mem-access 0' command is executed.
+11:24:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:24:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:24:24 INFO  : 'con' command is executed.
+11:24:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:24:24 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app_system/_ide/scripts/systemdebugger_mpsoc_oly_ps_gpio_app_system_standalone.tcl'
+11:29:51 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+11:30:16 INFO  : Disconnected from the channel tcfchan#5.
+11:30:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:30:16 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+11:30:16 INFO  : 'jtag frequency' command is executed.
+11:30:16 INFO  : Context for 'APU' is selected.
+11:30:16 INFO  : System reset is completed.
+11:30:19 INFO  : 'after 3000' command is executed.
+11:30:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+11:30:22 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+11:30:22 INFO  : Context for 'APU' is selected.
+11:30:22 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa'.
+11:30:22 INFO  : 'configparams force-mem-access 1' command is executed.
+11:30:22 INFO  : Context for 'APU' is selected.
+11:30:22 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' is done.
+11:30:22 INFO  : 'ps7_init' command is executed.
+11:30:22 INFO  : 'ps7_post_config' command is executed.
+11:30:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:30:22 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:30:22 INFO  : 'configparams force-mem-access 0' command is executed.
+11:30:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:30:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:30:22 INFO  : 'con' command is executed.
+11:30:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:30:22 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app_system/_ide/scripts/systemdebugger_mpsoc_oly_ps_gpio_app_system_standalone.tcl'
+11:31:00 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+11:31:19 INFO  : Disconnected from the channel tcfchan#7.
+11:31:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:31:19 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+11:31:19 INFO  : 'jtag frequency' command is executed.
+11:31:19 INFO  : Context for 'APU' is selected.
+11:31:19 INFO  : System reset is completed.
+11:31:22 INFO  : 'after 3000' command is executed.
+11:31:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+11:31:25 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+11:31:25 INFO  : Context for 'APU' is selected.
+11:31:25 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa'.
+11:31:25 INFO  : 'configparams force-mem-access 1' command is executed.
+11:31:25 INFO  : Context for 'APU' is selected.
+11:31:25 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' is done.
+11:31:25 INFO  : 'ps7_init' command is executed.
+11:31:25 INFO  : 'ps7_post_config' command is executed.
+11:31:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:31:25 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:31:25 INFO  : 'configparams force-mem-access 0' command is executed.
+11:31:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:31:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:31:25 INFO  : 'con' command is executed.
+11:31:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:31:25 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app_system/_ide/scripts/systemdebugger_mpsoc_oly_ps_gpio_app_system_standalone.tcl'
+11:31:38 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+11:31:53 INFO  : Disconnected from the channel tcfchan#9.
+11:31:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:31:54 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+11:31:54 INFO  : 'jtag frequency' command is executed.
+11:31:54 INFO  : Context for 'APU' is selected.
+11:31:54 INFO  : System reset is completed.
+11:31:57 INFO  : 'after 3000' command is executed.
+11:31:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+11:31:59 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+11:31:59 INFO  : Context for 'APU' is selected.
+11:31:59 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa'.
+11:31:59 INFO  : 'configparams force-mem-access 1' command is executed.
+11:31:59 INFO  : Context for 'APU' is selected.
+11:31:59 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' is done.
+11:31:59 INFO  : 'ps7_init' command is executed.
+11:31:59 INFO  : 'ps7_post_config' command is executed.
+11:31:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:32:00 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:32:00 INFO  : 'configparams force-mem-access 0' command is executed.
+11:32:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:32:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:32:00 INFO  : 'con' command is executed.
+11:32:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:32:00 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app_system/_ide/scripts/systemdebugger_mpsoc_oly_ps_gpio_app_system_standalone.tcl'
+11:32:43 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+11:32:59 INFO  : Disconnected from the channel tcfchan#11.
+11:32:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:32:59 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+11:32:59 INFO  : 'jtag frequency' command is executed.
+11:32:59 INFO  : Context for 'APU' is selected.
+11:32:59 INFO  : System reset is completed.
+11:33:02 INFO  : 'after 3000' command is executed.
+11:33:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+11:33:05 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+11:33:05 INFO  : Context for 'APU' is selected.
+11:33:05 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa'.
+11:33:05 INFO  : 'configparams force-mem-access 1' command is executed.
+11:33:05 INFO  : Context for 'APU' is selected.
+11:33:05 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' is done.
+11:33:05 INFO  : 'ps7_init' command is executed.
+11:33:05 INFO  : 'ps7_post_config' command is executed.
+11:33:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:33:05 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:33:05 INFO  : 'configparams force-mem-access 0' command is executed.
+11:33:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:33:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:33:05 INFO  : 'con' command is executed.
+11:33:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:33:05 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app_system/_ide/scripts/systemdebugger_mpsoc_oly_ps_gpio_app_system_standalone.tcl'
+11:33:21 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+11:33:32 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+11:33:51 INFO  : Disconnected from the channel tcfchan#13.
+11:33:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:33:51 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+11:33:51 INFO  : 'jtag frequency' command is executed.
+11:33:51 INFO  : Context for 'APU' is selected.
+11:33:51 INFO  : System reset is completed.
+11:33:54 INFO  : 'after 3000' command is executed.
+11:33:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+11:33:56 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+11:33:56 INFO  : Context for 'APU' is selected.
+11:33:56 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa'.
+11:33:56 INFO  : 'configparams force-mem-access 1' command is executed.
+11:33:56 INFO  : Context for 'APU' is selected.
+11:33:56 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' is done.
+11:33:57 INFO  : 'ps7_init' command is executed.
+11:33:57 INFO  : 'ps7_post_config' command is executed.
+11:33:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:33:57 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:33:57 INFO  : 'configparams force-mem-access 0' command is executed.
+11:33:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:33:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:33:57 INFO  : 'con' command is executed.
+11:33:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:33:57 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app_system/_ide/scripts/systemdebugger_mpsoc_oly_ps_gpio_app_system_standalone.tcl'
+11:34:09 INFO  : Checking for BSP changes to sync application flags for project 'mpsoc_oly_ps_gpio_app'...
+11:34:25 INFO  : Disconnected from the channel tcfchan#15.
+11:34:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:34:25 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+11:34:25 INFO  : 'jtag frequency' command is executed.
+11:34:25 INFO  : Context for 'APU' is selected.
+11:34:25 INFO  : System reset is completed.
+11:34:28 INFO  : 'after 3000' command is executed.
+11:34:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+11:34:31 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+11:34:31 INFO  : Context for 'APU' is selected.
+11:34:31 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa'.
+11:34:31 INFO  : 'configparams force-mem-access 1' command is executed.
+11:34:31 INFO  : Context for 'APU' is selected.
+11:34:31 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' is done.
+11:34:31 INFO  : 'ps7_init' command is executed.
+11:34:31 INFO  : 'ps7_post_config' command is executed.
+11:34:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:34:31 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:34:31 INFO  : 'configparams force-mem-access 0' command is executed.
+11:34:31 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:34:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:34:31 INFO  : 'con' command is executed.
+11:34:31 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:34:31 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app_system/_ide/scripts/systemdebugger_mpsoc_oly_ps_gpio_app_system_standalone.tcl'
+14:30:36 INFO  : Disconnected from the channel tcfchan#17.
+14:30:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:30:36 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+14:30:36 INFO  : 'jtag frequency' command is executed.
+14:30:36 INFO  : Context for 'APU' is selected.
+14:30:36 INFO  : System reset is completed.
+14:30:39 INFO  : 'after 3000' command is executed.
+14:30:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+14:30:41 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+14:30:41 INFO  : Context for 'APU' is selected.
+14:30:41 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa'.
+14:30:41 INFO  : 'configparams force-mem-access 1' command is executed.
+14:30:41 INFO  : Context for 'APU' is selected.
+14:30:41 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' is done.
+14:30:42 INFO  : 'ps7_init' command is executed.
+14:30:42 INFO  : 'ps7_post_config' command is executed.
+14:30:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:30:42 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:30:42 INFO  : 'configparams force-mem-access 0' command is executed.
+14:30:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:30:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:30:42 INFO  : 'con' command is executed.
+14:30:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:30:42 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app_system/_ide/scripts/systemdebugger_mpsoc_oly_ps_gpio_app_system_standalone.tcl'
+14:39:52 INFO  : Disconnected from the channel tcfchan#18.
+14:40:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:40:08 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD4141A' is selected.
+14:40:08 INFO  : 'jtag frequency' command is executed.
+14:40:08 INFO  : Context for 'APU' is selected.
+14:40:08 INFO  : System reset is completed.
+14:40:11 INFO  : 'after 3000' command is executed.
+14:40:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}' command is executed.
+14:40:13 INFO  : Device configured successfully with "/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit"
+14:40:14 INFO  : Context for 'APU' is selected.
+14:40:14 INFO  : Hardware design and registers information is loaded from '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa'.
+14:40:14 INFO  : 'configparams force-mem-access 1' command is executed.
+14:40:14 INFO  : Context for 'APU' is selected.
+14:40:14 INFO  : Sourcing of '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl' is done.
+14:40:14 INFO  : 'ps7_init' command is executed.
+14:40:14 INFO  : 'ps7_post_config' command is executed.
+14:40:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:40:14 INFO  : The application '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:40:14 INFO  : 'configparams force-mem-access 0' command is executed.
+14:40:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD4141A" && level==0 && jtag_device_ctx=="jsn-Xilinx PYNQ-Z1-003017AD4141A-23727093-0"}
+fpga -file /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/bitstream/mpsoc_only_ps_gpio_hw_export.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_only_ps_gpio_platform/export/mpsoc_only_ps_gpio_platform/hw/mpsoc_only_ps_gpio_hw_export.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app/Debug/mpsoc_oly_ps_gpio_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:40:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:40:14 INFO  : 'con' command is executed.
+14:40:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:40:14 INFO  : Launch script is exported to file '/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/mpsoc_oly_ps_gpio_app_system/_ide/scripts/systemdebugger_mpsoc_oly_ps_gpio_app_system_standalone.tcl'
+14:41:52 INFO  : Disconnected from the channel tcfchan#19.
+08:55:56 INFO  : Launching XSCT server: xsct -n  -interactive /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio/sw/temp_xsdb_launch_script.tcl
+08:56:00 INFO  : XSCT server has started successfully.
+08:56:00 INFO  : plnx-install-location is set to ''
+08:56:00 INFO  : Successfully done setting XSCT server connection channel  
+08:56:00 INFO  : Successfully done setting workspace for the tool. 
+08:56:04 INFO  : Platform repository initialization has completed.
+08:56:05 INFO  : Registering command handlers for Vitis TCF services
+08:56:05 INFO  : Successfully done query RDI_DATADIR 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="mpsoc_profiling_app" location="/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_app" platform="/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_profiling/sw/mpsoc_profiling_platform/export/mpsoc_profiling_platform/mpsoc_profiling_platform.xpfm" platformUID="xilinx:pynq-z1::0.0(custom)" systemProject="mpsoc_profiling_system" sysConfig="mpsoc_profiling_platform" runtime="C/C++" cpu="standalone_domain" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="d5d45c99e73ac016213b283d599246ca">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.135565247">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.1259996962" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

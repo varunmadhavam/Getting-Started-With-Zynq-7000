@@ -1,0 +1,5 @@
+set_property SRC_FILE_INFO {cfile:/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_uart_loop/mpsoc_uart_loop.srcs/constrs_1/new/pynqz1.xdc rfile:../../../mpsoc_uart_loop.srcs/constrs_1/new/pynqz1.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:41 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN Y18   IOSTANDARD LVCMOS33 } [get_ports { UART1_rxd }]; #IO_L17P_T2_34 Sch=ja_p[1]
+set_property src_info {type:XDC file:1 line:42 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN Y19   IOSTANDARD LVCMOS33 } [get_ports { UART1_txd }]; #IO_L17N_T2_34 Sch=ja_n[1]

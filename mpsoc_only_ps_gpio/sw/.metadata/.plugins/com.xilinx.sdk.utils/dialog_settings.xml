@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="scw_hwspec" value="/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio"/>
+	<item key="scw_hwspec_file_selection" value="/home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_ps_gpio"/>
+</section>

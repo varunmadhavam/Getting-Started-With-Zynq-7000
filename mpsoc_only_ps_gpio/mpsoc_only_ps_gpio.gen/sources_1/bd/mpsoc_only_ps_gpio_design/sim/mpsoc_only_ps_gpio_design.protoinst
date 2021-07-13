@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"mpsoc_only_ps_gpio_design": {
+			"proto_instances": {
+			}
+		}
+	}
+}

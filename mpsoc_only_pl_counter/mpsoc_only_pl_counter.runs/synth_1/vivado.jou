@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sat Jun 12 11:09:36 2021
+# Process ID: 75057
+# Current directory: /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_pl_counter/mpsoc_only_pl_counter.runs/synth_1
+# Command line: vivado -log counter.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source counter.tcl
+# Log file: /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_pl_counter/mpsoc_only_pl_counter.runs/synth_1/counter.vds
+# Journal file: /home/varun/coding/fpga/xylinx/pynq_z1/mpsoc_only_pl_counter/mpsoc_only_pl_counter.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source counter.tcl -notrace
